@@ -28,4 +28,6 @@ COPY nest.yml .
 # Команда для запуска тестов с созданием отчета JSON
 CMD ["artillery", "run", "nest.yml", "--output", "output.json", "&&", "artillery", "report", "output.json", "--output", "index.html"]
 
+COPY index.html /app
+
 

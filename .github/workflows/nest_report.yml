@@ -36,7 +36,7 @@ jobs:
       - name: Publish HTML report as artifact
         uses: actions/upload-artifact@v2
         with:
-          name: report.html
+          name: report
           path: /
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

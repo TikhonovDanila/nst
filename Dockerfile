@@ -23,7 +23,7 @@ FROM app as tests
 RUN npm install -g artillery
 
 # Копируем файл конфигурации тестов
-COPY nest.yaml .
+COPY nest.yml .
 
 # Команда для запуска тестов с созданием отчета JSON
 CMD ["artillery", "run", "nest.yaml", "--output", "nest.json"]

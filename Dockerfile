@@ -27,9 +27,9 @@ COPY nest.yml .
 
 # Запускаем тесты и создаем отчет JSON
 CMD ["artillery", "run", "nest.yml", "--output", "output.json"]
-
+COPY . .
 # Создаем HTML отчет
-RUN artillery report output.json --output index.html
+# RUN artillery report output.json --output index.html
 
 # Копируем HTML отчет в рабочую директорию
 # COPY index.html ./

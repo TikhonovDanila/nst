@@ -32,4 +32,4 @@ CMD ["artillery", "run", "nest.yml", "--output", "output.json"]
 RUN artillery report output.json --output index.html
 
 # Копируем HTML отчет в рабочую директорию
-COPY index.html ./
+# COPY index.html ./

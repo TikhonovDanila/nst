@@ -26,5 +26,5 @@ RUN npm install -g artillery
 COPY nest.yml .
 
 # Команда для запуска тестов с созданием отчета JSON
-CMD ["artillery", "run", "nest.yaml", "--output", "nest.json"]
-CMD ["artillery", "report", "nest.json"]
+CMD ["artillery", "run", "nest.yaml", "--output", "report.json"]
+CMD ["artillery", "report", "report.json"]

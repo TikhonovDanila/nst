@@ -40,8 +40,8 @@ jobs:
       - name: Copy HTML report from container
         run: |
           docker cp $(docker ps -lq):/app/index.html ./index.html
+          docker cp $(docker ps -lq):/app/output.json ./output.json 
 
-     
       - name: Publish HTML report as artifact
         uses: actions/upload-artifact@v2
         with:

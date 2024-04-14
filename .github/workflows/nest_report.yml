@@ -33,9 +33,14 @@ jobs:
         run: |
           docker build . -t nest:latest
 
-      - name: Run tests with Artillery1
+      - name: Run tests with Artillery
         run: |
-          docker run nest:latest sh -c "artillery run nest.yml --output /app/output.json && cp /app/output.json . && artillery report /app/output.json --output /app/index.html && cp /app/index.html ."
+          docker run nest:latest sh -c "artillery run nest.yml --output /app/output.json && artillery report /app/output.json --output /app/index.html"
+
+      - name: Copy HTML report from container
+        run: |
+          docker cp $(docker ps -lq):/app/index.html ./index.html
+
      
       - name: Publish HTML report as artifact
         uses: actions/upload-artifact@v2

@@ -21,6 +21,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          
+      - name: Install artillery globally
+        run: |
+          npm install -g artillery
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2

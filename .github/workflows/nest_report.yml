@@ -32,7 +32,10 @@ jobs:
       - name: Build Docker image
         run: |
           docker build . -t nest:latest
-          
+
+      - name: Build Docker image
+        run: |
+          docker run nest:latest npm start   
       - name: Run artillery test
         run: |
           - docker run nest:latest artillery run nest.yaml --output nest.json

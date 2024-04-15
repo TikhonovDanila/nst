@@ -45,8 +45,8 @@ jobs:
       - name: Publish HTML report as artifact
         uses: actions/upload-artifact@v2
         with:
-          name: index
-          path: ./
+          name: frsh-report
+          path: index.html
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

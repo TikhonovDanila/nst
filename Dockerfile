@@ -15,7 +15,7 @@ FROM app as tests
 # Устанавливаем artillery глобально
 RUN npm install -g artillery
 # Копируем файл конфигурации тестов
-COPY nest.yml .
+COPY nest_art.yml .
 # Запускаем тесты и создаем отчет JSON
-CMD ["sh", "-c", "artillery run nest.yml --output nest.json && artillery report nest.json --output index.html"]
+CMD ["sh", "-c", "artillery run nest_art.yml --output nest.json && artillery report nest.json --output index.html"]
 
